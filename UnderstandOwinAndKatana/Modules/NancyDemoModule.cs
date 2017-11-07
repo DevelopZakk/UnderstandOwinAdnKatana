@@ -1,5 +1,6 @@
 ﻿using Nancy;
 using Nancy.Owin;
+using Nancy.Security;
 
 namespace UnderstandOwinAndKatana.Modules
 {
@@ -7,10 +8,14 @@ namespace UnderstandOwinAndKatana.Modules
     {
         public NancyDemoModule()
         {
+
+            this.RequiresMSOwinAuthentication();
+
             Get["/nancy"] = x =>
             {
                 var env = Context.GetOwinEnvironment();
-                return "Hello from nancy! Your request: " + env["owin.RequestPathBase"] +env["owin.RequestPath"];
+                var user = Context.GetMSOwinUser();
+                return "Hello from nancy! Your request: " + env["owin.RequestPathBase"] +env["owin.RequestPath"] + "User:"+user.Identity.Name;
             };
         }
     }

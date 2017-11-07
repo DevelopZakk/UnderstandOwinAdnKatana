@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Runtime.InteropServices.ComTypes;
 using System.Web.Http;
+using Microsoft.Owin.Security.Cookies;
 using Nancy;
 using Nancy.Owin;
 using Owin;
@@ -15,18 +16,31 @@ namespace UnderstandOwinAndKatana
             //app.Use<DebugMiddleware>(new DebugMiddlewareOptions());
             app.UseDebugMiddleware(new DebugMiddlewareOptions());
 
+            app.UseCookieAuthentication(new CookieAuthenticationOptions()
+            {
+                AuthenticationType = "ApplicationCookie",
+                LoginPath = new Microsoft.Owin.PathString("/Login/Auth")
+            });
+
+            app.Use(async (ctx, next) =>
+            {
+                if (ctx.Authentication.User.Identity.IsAuthenticated)
+                { Debug.WriteLine("User:" + ctx.Authentication.User.Identity.Name);}
+                await next();
+
+            });
 
             var config = new HttpConfiguration();
             config.MapHttpAttributeRoutes();
             app.UseWebApi(config);
             //app.UseNancy();
 
-            //app.Map("/nancy", mapapp => { mapapp.UseNancy(); });
+            app.Map("/nancy", mapapp => { mapapp.UseNancy(); });
 
-            app.UseNancy(conf =>
-            {
-                conf.PassThroughWhenStatusCodesAre(HttpStatusCode.NotFound);
-            });
+            //app.UseNancy(conf =>
+            //{
+            //    conf.PassThroughWhenStatusCodesAre(HttpStatusCode.NotFound);
+            //});
 
             //app.Use(async (ctx,next) =>
             //{
