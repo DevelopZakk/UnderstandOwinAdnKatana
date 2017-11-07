@@ -9,7 +9,7 @@ namespace UnderstandOwinAndKatana
     {
         public static void Configuration(IAppBuilder app)
         {
-            app.Use<DebugMiddleware>();
+            app.Use<DebugMiddleware>(new DebugMiddlewareOptions());
 
             app.Use(async (ctx,next) =>
             {
