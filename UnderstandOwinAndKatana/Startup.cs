@@ -28,12 +28,12 @@ namespace UnderstandOwinAndKatana
                 conf.PassThroughWhenStatusCodesAre(HttpStatusCode.NotFound);
             });
 
-            app.Use(async (ctx,next) =>
-            {
-                Debug.WriteLine("Incoming Request 2module:" + ctx.Request.Path);
-                await ctx.Response.WriteAsync($"<html><body><h1>Hello World</h1></body></html>");
-                Debug.WriteLine("Outgoingcoming Request 2module:" + ctx.Request.Path);
-            });
+            //app.Use(async (ctx,next) =>
+            //{
+            //    Debug.WriteLine("Incoming Request 2module:" + ctx.Request.Path);
+            //    await ctx.Response.WriteAsync($"<html><body><h1>Hello World</h1></body></html>");
+            //    Debug.WriteLine("Outgoingcoming Request 2module:" + ctx.Request.Path);
+            //});
         }
 
     }

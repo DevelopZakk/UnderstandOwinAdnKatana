@@ -118,6 +118,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Global.asax" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -130,6 +132,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HelloWorldApiController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
     <Compile Include="Middleware\DebugMiddleware.cs" />
     <Compile Include="Middleware\DebugMiddlewareExtensions.cs" />
     <Compile Include="Middleware\DebugMiddlewareOptions.cs" />
