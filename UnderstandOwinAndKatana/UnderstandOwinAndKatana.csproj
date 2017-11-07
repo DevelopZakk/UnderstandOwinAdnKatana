@@ -96,6 +96,7 @@
     <Compile Include="Middleware\DebugMiddleware.cs" />
     <Compile Include="Middleware\DebugMiddlewareExtensions.cs" />
     <Compile Include="Middleware\DebugMiddlewareOptions.cs" />
+    <Compile Include="Modules\NancyDemoModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

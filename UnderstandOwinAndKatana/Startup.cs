@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Runtime.InteropServices.ComTypes;
+using Nancy;
+using Nancy.Owin;
 using Owin;
 using UnderstandOwinAndKatana.Middleware;
 
@@ -11,6 +13,15 @@ namespace UnderstandOwinAndKatana
         {
             //app.Use<DebugMiddleware>(new DebugMiddlewareOptions());
             app.UseDebugMiddleware(new DebugMiddlewareOptions());
+
+            //app.UseNancy();
+
+            //app.Map("/nancy", mapapp => { mapapp.UseNancy(); });
+
+            app.UseNancy(config =>
+            {
+                config.PassThroughWhenStatusCodesAre(HttpStatusCode.NotFound);
+            });
 
             app.Use(async (ctx,next) =>
             {
