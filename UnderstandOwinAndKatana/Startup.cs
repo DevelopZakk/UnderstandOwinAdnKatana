@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using System.Runtime.InteropServices.ComTypes;
 using Owin;
+using UnderstandOwinAndKatana.Middleware;
 
 namespace UnderstandOwinAndKatana
 {
@@ -8,12 +9,8 @@ namespace UnderstandOwinAndKatana
     {
         public static void Configuration(IAppBuilder app)
         {
-            app.Use(async (ctx, next) =>
-            {
-                Debug.WriteLine("Incoming Request:" +ctx.Request.Path);
-                await next();
-                Debug.WriteLine("Outogint Request:" + ctx.Request.Path);
-            });
+            app.Use<DebugMiddleware>();
+
             app.Use(async (ctx,next) =>
             {
                 Debug.WriteLine("Incoming Request 2module:" + ctx.Request.Path);
