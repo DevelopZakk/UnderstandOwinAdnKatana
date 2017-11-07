@@ -7,6 +7,7 @@ namespace OwinSelfHostDemo
     {
         public static void Configuration(IAppBuilder app)
         {
+            app.UseStaticFiles();
 
             app.Use(async (ctx, next) =>
             {

@@ -7,6 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnderstandOwinAndKatana", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwinSelfHostDemo", "OwinSelfHostDemo\OwinSelfHostDemo.csproj", "{E4A729EE-6B98-4941-931A-398E1345C1E1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetOwinHost", "DotNetOwinHost\DotNetOwinHost.csproj", "{D1A395B5-D584-4C7B-99A7-2981E4FEE2AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCore", "AspNetCore\AspNetCore.csproj", "{E9075238-CABE-4E0D-9775-F6FCDCACFAF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OwinHostDemoTest", "OwinHostDemoTest\OwinHostDemoTest.csproj", "{E26D335F-0708-4FF8-93E0-7675B7851355}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{E4A729EE-6B98-4941-931A-398E1345C1E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E4A729EE-6B98-4941-931A-398E1345C1E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E4A729EE-6B98-4941-931A-398E1345C1E1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1A395B5-D584-4C7B-99A7-2981E4FEE2AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A395B5-D584-4C7B-99A7-2981E4FEE2AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1A395B5-D584-4C7B-99A7-2981E4FEE2AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1A395B5-D584-4C7B-99A7-2981E4FEE2AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E9075238-CABE-4E0D-9775-F6FCDCACFAF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E9075238-CABE-4E0D-9775-F6FCDCACFAF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E9075238-CABE-4E0D-9775-F6FCDCACFAF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E9075238-CABE-4E0D-9775-F6FCDCACFAF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E26D335F-0708-4FF8-93E0-7675B7851355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E26D335F-0708-4FF8-93E0-7675B7851355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E26D335F-0708-4FF8-93E0-7675B7851355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E26D335F-0708-4FF8-93E0-7675B7851355}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
